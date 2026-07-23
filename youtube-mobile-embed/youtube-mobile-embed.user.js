@@ -6,6 +6,8 @@
 // @author       Dao Quang Phuong
 // @match        https://m.youtube.com/watch?v=*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
+// @downloadURL  https://raw.githubusercontent.com/daoquangphuong/tampermonkey/refs/heads/main/youtube-mobile-embed/youtube-mobile-embed.user.js
+// @updateURL    https://raw.githubusercontent.com/daoquangphuong/tampermonkey/refs/heads/main/youtube-mobile-embed/youtube-mobile-embed.user.js
 // @grant        none
 // ==/UserScript==
 
