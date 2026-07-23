@@ -63,9 +63,9 @@
     const app = document.querySelector('#player-container-id');
     if (app) {
       app.setAttribute('style', 'display: none;');
+      observe.disconnect();
+      loop();
     }
-    observe.disconnect();
-    loop();
   });
 
   observe.observe(document.documentElement, {
