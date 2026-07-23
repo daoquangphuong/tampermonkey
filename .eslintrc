@@ -1,0 +1,77 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier", "react-hooks"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules"]
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/prop-types": 0,
+    "no-underscore-dangle": 0,
+    "import/no-named-as-default": 0,
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "import/prefer-default-export": "none",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "info",
+          "error",
+          "time",
+          "timeEnd",
+          "group",
+          "groupCollapsed",
+          "groupEnd",
+          "table"
+        ]
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "react/no-danger": "warning",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "error",
+      {
+        "additionalHooks": "(useJsonMemo)"
+      }
+    ]
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true,
+    "EventSource": true,
+    "fetch": true,
+    "structuredClone": true,
+    "AbortController": true,
+    "AbortSignal": true
+  },
+  "parser": "babel-eslint"
+}
