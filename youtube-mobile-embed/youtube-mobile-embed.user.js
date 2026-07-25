@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Embed
 // @namespace    http://tampermonkey.net/
-// @version      2026-07-22
+// @version      1.0.1
 // @description  Replace YouTube Player by Embed Player
 // @author       Dao Quang Phuong
 // @match        https://m.youtube.com/*
