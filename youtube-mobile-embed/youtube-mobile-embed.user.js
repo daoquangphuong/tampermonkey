@@ -14,6 +14,16 @@
 
 (function() {
   const main = () => {
+    const isShort = window.location.pathname.startsWith('/shorts/');
+    const app = document.querySelector('#player-container-id');
+    if (app) {
+      app.setAttribute('style', isShort ? '' : 'display: none;');
+    }
+
+    if (isShort) {
+      return;
+    }
+
     const video = document.querySelector('#player-container-id video');
     if (video) {
       video.pause();
