@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Embed
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Replace YouTube Player by Embed Player
 // @author       Dao Quang Phuong
 // @match        https://m.youtube.com/*
@@ -13,6 +13,35 @@
 // ==/UserScript==
 
 (function() {
+  const style = document.createElement('style');
+
+  style.textContent = `
+.YtmCompactMediaItemHost, .ytLockupViewModelHost {
+  flex-wrap: wrap !important;
+}
+
+.video-thumbnail-container-compact, .ytLockupViewModelContentImage {
+  width: calc(100vw - 24px) !important;
+  height: 25vh !important;
+}
+
+.ytCoreImageHost {
+  object-fit: contain !important;
+}
+
+.YtmCompactMediaItemMetadata, .ytLockupViewModelMetadata {
+  padding-top: 10px !important;
+}
+
+.media-item-headline {
+  max-height: none !important;;
+  -webkit-line-clamp: none !important;;
+}
+
+  `.trim();
+
+  document.querySelector('head').prepend(style);
+
   const main = () => {
     const isShort = window.location.pathname.startsWith('/shorts/');
     const app = document.querySelector('#player-container-id');
