@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Embed
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Replace YouTube Player by Embed Player
 // @author       Dao Quang Phuong
 // @match        https://m.youtube.com/*
@@ -38,6 +38,11 @@
     const videoId = new URLSearchParams(window.location.search).get('v');
 
     if (videoId) {
+      const page = document.querySelector('.page-container');
+      if (page) {
+        page.removeAttribute('inert');
+      }
+
       const container = document.querySelector(
         '#app .player-size.player-placeholder'
       );
