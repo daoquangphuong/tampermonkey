@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Embed
 // @namespace    http://tampermonkey.net/
-// @version      1.0.3
+// @version      1.0.4
 // @description  Replace YouTube Player by Embed Player
 // @author       Dao Quang Phuong
 // @match        https://m.youtube.com/*
@@ -33,7 +33,7 @@
   padding-top: 10px !important;
 }
 
-.media-item-headline {
+.media-item-headline, .ytLockupMetadataViewModelTitle {
   max-height: none !important;;
   -webkit-line-clamp: none !important;;
 }
