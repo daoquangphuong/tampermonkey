@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GM Fetch Bridge
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Fetch Data From Other Website
 // @author       Dao Quang Phuong
 // @match        http://localhost:6973/browser/*
@@ -39,8 +39,22 @@
       headers,
       data,
       timeout,
-
+      responseType: 'arraybuffer',
       onload(response) {
+        const buffer = response.response;
+
+        const tempDecoder = new TextDecoder('utf-8');
+        const tempText = tempDecoder.decode(buffer);
+
+        let responseText = '';
+
+        if (/charset=["']?gbk["']?/im.test(tempText)) {
+          const gbkDecoder = new TextDecoder('gbk');
+          responseText = gbkDecoder.decode(buffer);
+        } else {
+          responseText = tempText;
+        }
+
         window.postMessage(
           {
             type: RESPONSE_TYPE,
@@ -51,7 +65,7 @@
               status: response.status,
               statusText: response.statusText,
               responseHeaders: response.responseHeaders,
-              responseText: response.responseText,
+              responseText,
             },
           },
           '*'
