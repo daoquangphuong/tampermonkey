@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GM Fetch Bridge
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Fetch Data From Other Website
 // @author       Dao Quang Phuong
 // @match        http://localhost:6973/browser/*
@@ -11,8 +11,6 @@
 // @updateURL    https://raw.githubusercontent.com/daoquangphuong/tampermonkey/refs/heads/main/gm-fetch-bridge/gm-fetch-bridge.user.js
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
-// @connect      sangtacviet.app
-// @connect      sangtacviet.vip
 // ==/UserScript==
 
 (function() {
